@@ -1,65 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Great Cliff's</title>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <title>Great Cliffs — Activities</title>
 </head>
 <body>
-  <!-- Page container wraps all content -->
-  <div class="container">
-    <!-- Header -->
+  <div id="container">
     <header>
-      <img src="images/east-village.jpg" alt="placeholder image" width = "" height = "">
+      <img src="images/cliff_ocean.jpg" alt="Ocean View Cliff" width="1280" height="564" />
       <div class="main-header">
         <div class="logo">
-          <h3>Great Cliff's Logo</h3>
+          <img src="images/logo.png" alt="Great Cliffs Logo" width="125" />
         </div>
-        <nav class="main-menu">
+        <nav class="main-menu" aria-label="Main">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">Cliffs</a></li>
-            <li><a href="#">Tours</a></li>
-            <li><a href="#">Tickets</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="activities.html" aria-current="page">Activities</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- Main content -->
     <main>
-      <h2>Welcome to Great Cliff's</h2>
-      <h3>Experience the heights</h3>
+      <h1>Activities</h1>
+
       <p>
-        Discover breathtaking views and unforgettable adventures along our scenic cliffside trails.
-        Book guided tours, learn about safety, and explore our partners below.
+        There are many planned activities at all the cliff sites. Some are scheduled daily,
+        weekly, monthly and yearly. These activities are not however run by the state park and
+        recreational department. They are operated and manage by private vendors but are partners
+        with the state department. Therefore, for schedule inquiries or information, please
+        contact them directly. For a list of activities, please refer to the table below:
       </p>
+
+      <table border="1">
+        <caption>Activities at the Cliffs</caption>
+        <thead>
+          <tr>
+            <th scope="col">Activity</th>
+            <th scope="col">West Cliff</th>
+            <th scope="col">North Cliff</th>
+            <th scope="col">East Cliff</th>
+            <th scope="col">South Cliff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Hiking</th>
+            <td>College Hikes</td>
+            <td>Family Fun</td>
+            <td>Treasure Trails</td>
+            <td>Canyon Explorer</td>
+          </tr>
+          <tr>
+            <th scope="row">Kayak</th>
+            <td>Western Kayak Meetup</td>
+            <td>Not Available</td>
+            <td>Youth Kayaking</td>
+            <td>Kayak Down</td>
+          </tr>
+          <tr>
+            <th scope="row">Skydiving</th>
+            <td>Seacliff Diving</td>
+            <td>Sky is the limit</td>
+            <td>Not Available</td>
+            <td>Sky Diving for Beginners</td>
+          </tr>
+          <tr>
+            <th scope="row">Biking</th>
+            <td>Bicycle for One</td>
+            <td>Not Available</td>
+            <td>Bike Meetup Group</td>
+            <td>Not Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Camping</th>
+            <td>Youth Camp</td>
+            <td>Rent a Tent</td>
+            <td>Campground Adventure</td>
+            <td>Sunset Camping</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
 
-    <!-- Partners section -->
-    <section>
-      <ul id="partners">
-        <li class="partner"><h3>Partner 1 Image</h3></li>
-        <li class="partner"><h3>Partner 2 Image</h3></li>
-        <li class="partner"><h3>Partner 3 Image</h3></li>
-        <li class="partner"><h3>Partner 4 Image</h3></li>
-        <li class="partner"><h3>Partner 5 Image</h3></li>
-        <li class="partner"><h3>Partner 6 Image</h3></li>
-      </ul>
-    </section>
-
-    <!-- Footer -->
     <footer>
       <div id="nondisclaimer">
-        <div class="copy">&copy; 2025 Great Cliff's</div>
-        <div class="social">
-          <h3>Follow us on social media</h3>
-        </div>
+        <div class="copy">&copy; <span id="year">2025</span> Great Cliffs</div>
       </div>
       <div id="disclaimer">
-        <p>
-          This site is a simple structural demo. All names and content are placeholders.
-        </p>
+        <p>This site is a structural demo page for coursework.</p>
       </div>
     </footer>
   </div>

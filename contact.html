@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Great Cliffs — Contact</title>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <img src="images/cliff_ocean.jpg" alt="Ocean View Cliff" width="1280" height="564" />
+      <div class="main-header">
+        <div class="logo">
+          <img src="images/logo.png" alt="Great Cliffs Logo" width="125" />
+        </div>
+        <nav class="main-menu" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Cliffs</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1>Contacting Us</h1>
+
+      <p>
+        If you need more information about the Cliffs, Hours of Operations, Facilities or questions
+        about this site, please contact us bu using one of the following:
+      </p>
+
+      <h2>Phone:</h2>
+      <p>(800)GCLIFFS</p>
+
+      <h2>Email:</h2>
+      <p>info@greatcliffs.com</p>
+
+      <form action="/contact" method="post">
+        <h3>Fill Out This Form:</h3>
+
+        <fieldset>
+          <legend>Contact Form</legend>
+
+          <p>
+            <label for="full-name">Enter your full name</label><br />
+            <input id="full-name" name="full_name" type="text" placeholder="Enter your full name" required />
+          </p>
+
+          <p>
+            <label for="email">Enter your email</label><br />
+            <input id="email" name="email" type="email" placeholder="Enter your email" required />
+          </p>
+
+          <p>
+            <label for="phone">Enter your phone</label><br />
+            <input id="phone" name="phone" type="tel" placeholder="Enter your phone" />
+          </p>
+
+          <fieldset>
+            <legend>How should we contact you?</legend>
+            <label><input type="radio" name="preferred_contact" value="email" checked /> Email</label>
+            <label><input type="radio" name="preferred_contact" value="phone" /> Phone</label>
+          </fieldset>
+
+          <p>
+            <label for="cliff">Which Cliff are you inquiring?</label><br />
+            <select id="cliff" name="cliff">
+              <option value="west">West Cliff</option>
+              <option value="north">North Cliff</option>
+              <option value="east">East Cliff</option>
+              <option value="south">South Cliff</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="referrer">How did you hear about us:</label><br />
+            <select id="referrer" name="referrer">
+              <option value="friends">Friends/Family</option>
+              <option value="social">Social Media</option>
+              <option value="search">Search Engine</option>
+              <option value="ads">Online Ads</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+
+          <p>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </p>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <div id="nondisclaimer">
+        <div class="copy">&copy; <span id="year">2025</span> Great Cliffs</div>
+      </div>
+      <div id="disclaimer">
+        <p>This site is a structural demo page for coursework.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
