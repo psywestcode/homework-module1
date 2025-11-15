@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Great Cliffs</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Great Cliffs — Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Page container wraps all content -->
   <div class="container">
-    <!-- Header -->
     <header>
-      <!-- NO IMAGE FOUND IN COURSE MATERIAL. PLACEHOLDER IMAGES INSERTED -->
-      <img src="images/east-village.jpg" alt="placeholder image" width = "" height = "">
       <div class="main-header">
         <div class="logo">
-          <h3>Great Cliff's Logo</h3>
+          <img src="images/logo.png" alt="Great Cliffs logo">
         </div>
-        <nav class="main-menu">
+        <nav class="main-menu" aria-label="Main">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" aria-current="page">Home</a></li>
             <li><a href="#">Cliffs</a></li>
             <li><a href="activities.html">Activities</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -26,40 +24,36 @@
       </div>
     </header>
 
-    <!-- Main content -->
     <main>
-      <h2>Welcome to Great Cliff's</h2>
-      <h3>Experience the heights</h3>
+      <h1>Welcome to Great Cliffs</h1>
+      <h2>Experience the heights</h2>
       <p>
         Discover breathtaking views and unforgettable adventures along our scenic cliffside trails.
         Book guided tours, learn about safety, and explore our partners below.
       </p>
     </main>
 
-    <!-- Partners section -->
-    <section>
+    <section aria-labelledby="partners-title">
+      <h2 id="partners-title" style="margin: 0 50px;">Our Partners</h2>
       <ul id="partners">
-        <li class="partner"><h3>Partner 1 Image</h3></li>
-        <li class="partner"><h3>Partner 2 Image</h3></li>
-        <li class="partner"><h3>Partner 3 Image</h3></li>
-        <li class="partner"><h3>Partner 4 Image</h3></li>
-        <li class="partner"><h3>Partner 5 Image</h3></li>
-        <li class="partner"><h3>Partner 6 Image</h3></li>
+        <li class="partner"><img src="images/partner1.png" alt="Partner 1"></li>
+        <li class="partner"><img src="images/partner2.png" alt="Partner 2"></li>
+        <li class="partner"><img src="images/partner3.png" alt="Partner 3"></li>
+        <li class="partner"><img src="images/partner4.png" alt="Partner 4"></li>
+        <li class="partner"><img src="images/partner5.png" alt="Partner 5"></li>
+        <li class="partner"><img src="images/partner6.png" alt="Partner 6"></li>
       </ul>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div id="nondisclaimer">
-        <div class="copy">&copy; 2025 Great Cliff's</div>
+        <div class="copy">&copy; 2025 Great Cliffs</div>
         <div class="social">
-          <h3>Follow us on social media</h3>
+          <strong>Follow us:</strong> @greatcliffs
         </div>
       </div>
       <div id="disclaimer">
-        <p>
-          This site is a simple structural demo. All names and content are placeholders.
-        </p>
+        <p>This site is a simple structural demo. All names and content are placeholders.</p>
       </div>
     </footer>
   </div>
