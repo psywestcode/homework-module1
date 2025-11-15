@@ -1,8 +1,12 @@
-/* ====== Great Cliffs — External stylesheet ======
-   Notes:
-   - Slides 11 & 18–21 (PDF): Add main margin, table and form styling
-   - Slides 14–16: Remove fixed main height (do NOT set height on <main>)
-=================================================== */
+/* Great Cliffs — site stylesheet
+   Based on Week 2 Day 2 exercise slides (table + form refinements).
+   Key items implemented from slides:
+   - External stylesheet linked on all pages (Slides 8–12)
+   - Remove fixed height from <main> and add margin (Slides 14–15, 18) 
+   - Table spacing/borders/cell sizing/caption styling (Slides 17–21)
+   - Form cleanup: remove <br>, block labels, widths, radio width, textarea width,
+     submit button on its own line with spacing (Slides 22–27)
+*/
 
 * { box-sizing: border-box; }
 
@@ -15,114 +19,108 @@ html, body {
 }
 
 /* Page container */
-#container, .container { 
-  max-width: 1200px; 
-  margin: 0 auto; 
+#container, .container {
+  max-width: 1200px;
+  margin: 0 auto;
   background: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-/* Header with background image (used on index) */
+/* Header uses a hero image via CSS (no <img> in markup) */
 header {
-  background: url(images/east-village.jpg) 0 -200px no-repeat;  /* stop tiling */
-  background-size: 1500px;
-  height: 400px;
-  color: #fff;
-  font-weight: bold;
-  padding-top: 100px;   /* Visually centers header background */
-  padding-left: 100px;
+  background: url(images/hero.jpg) center center no-repeat;
+  background-size: cover;
+  height: 280px;
   margin: 0;
   position: relative;
   overflow: hidden;
 }
 
-/* Top bar that holds logo + nav */
+/* Top bar: logo + nav */
 .main-header {
   position: absolute;
-  left: 0; right: 0; top: 0;
+  top: 0; left: 0; right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
-  background: rgba(255, 255, 255, 0.85);
-  color: #333;
+  background: rgba(255,255,255,0.88);
 }
 
 /* Logo */
-.logo img { display: block; width: 125px; height: auto; }
-.logo h3 { margin: 0; font-size: 18px; letter-spacing: .5px; }
+.logo img { width: 125px; height: auto; display: block; }
 
 /* Navigation */
 .main-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .main-menu a {
-  text-decoration: none;
   color: #444;
+  text-decoration: none;
   font-weight: 600;
   letter-spacing: .2px;
 }
-.main-menu a[aria-current="page"],
-.main-menu a:hover { text-decoration: underline; }
+.main-menu a:hover,
+.main-menu a[aria-current="page"] { text-decoration: underline; }
 
-/* ====== Main area ====== */
-/* Slide 11: add margin around main content */
+/* Main content — per slide 18, add breathing room */
 main { margin: 50px; }
 main h1, main h2 { color: rgb(129, 141, 173); }
 main p { line-height: 1.55; }
 
-/* ====== Partners (home) ====== */
+/* Partners grid (home) */
 #partners {
   list-style: none;
   margin: 0;
-  padding: 20px 50px 40px;
+  padding: 20px 50px 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }
-#partners .partner {
+.partner {
   border: 1px solid #e4e6ee;
+  background: #fafbff;
   padding: 10px;
   text-align: center;
-  background: #fafbff;
 }
-#partners .partner img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.partner img { max-width: 100%; display: block; margin: 0 auto; height: auto; }
 
-/* ====== Table styling (activities) ====== */
-/* Slide 11: give table top margin */
-table { margin-top: 35px; border-collapse: collapse; width: 100%; }
-
-/* Slides 12–13: replace HTML border with CSS border */
+/* Table styling (Slides 17–21) */
+table { 
+  margin-top: 35px;        /* move table away from window edges */
+  border-collapse: collapse;
+  width: 100%;
+}
+/* Replace HTML border=1 with CSS borders */
 table, caption, th, td { border: 1px solid #000; }
-
-/* Slide 13: expand cell sizes + center text */
-th, td { width: 150px; height: 35px; text-align: center; padding: 8px; }
-
-/* Slide 14: style caption (uppercase, weight, height, padding, color) */
+/* Expand cells, center text, add padding */
+th, td {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  padding: 8px;
+}
+/* Caption styling: uppercase, bold, height, padding, color */
 caption {
   text-transform: uppercase;
   font-weight: 600;
   height: 40px;
   padding-top: 15px;
-  color: #f7533a; /* assumption from slide screenshot */
+  color: #f7533a;
 }
 
-/* ====== Form styling (contact) ====== */
-/* Slide 17: display label as block and add vertical spacing */
+/* Form styling (Slides 22–27) */
 label { display: block; margin: 15px 0 0 0; }
-
-/* Slide 18: extend width of textboxes */
-input[type="text"], input[type="email"], input[type="tel"], select { width: 300px; }
-
-/* Slide 19: adjust width of radio buttons and textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select { width: 300px; }
 input[type="radio"] { width: 25px; }
 textarea { width: 300px; min-height: 100px; }
-
-/* Slide 20: style submit button */
 input[type="submit"] {
   display: block;
   margin: 20px 10px 0 0;
@@ -133,11 +131,9 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"]:hover { background: #e5e5e5; }
-
-/* Optional: style reset similarly but lighter */
 input[type="reset"] {
   display: inline-block;
-  margin: 20px 0 0 0;
+  margin-top: 20px;
   padding: 8px 10px;
   border: 1px solid #ccc;
   background: #fafafa;
@@ -146,13 +142,9 @@ input[type="reset"] {
 
 /* Footer */
 footer { margin-top: 20px; background: #e7ebf5; }
-#nondisclaimer, #disclaimer {
-  padding: 15px 30px;
-}
+#nondisclaimer, #disclaimer { padding: 15px 30px; }
 #nondisclaimer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
 }
 .copy { font-size: 14px; color: #454b5e; }
 #disclaimer p { margin: 0; font-size: 13px; color: #6a7288; }
