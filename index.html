@@ -24,6 +24,8 @@
       </div>
     </header>
 
+ 
+
     <main>
       <h1>Welcome to Great Cliffs</h1>
       <h2>Experience the heights</h2>
@@ -44,7 +46,11 @@
         <li class="partner"><img src="images/partner6.png" alt="Partner 6 logo"></li>
       </ul>
     </section>
-
+       <!-- Time-of-day display (added per homework p.5) -->
+    <section id="timeofday" aria-live="polite" role="timer">
+      <span class="label">Your Current Local Time:</span>
+      <span id="clock" class="clock" aria-label="Current local time">--:--:-- --</span>
+    </section>
     <footer>
       <div id="nondisclaimer">
         <div class="copy">&copy; 2025 Great Cliffs</div>
@@ -55,5 +61,83 @@
       </div>
     </footer>
   </div>
+
+  
+  <script>
+    // Pad helper: converts 4 -> "04"
+    function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+    // Return "PT", "MT", "CT", "ET" when possible; otherwise "GMT±H:MM"
+    function getUSZoneAbbrev(dateObj) {
+      // Homework challenge variables (p.18): declare and compute
+      var utchr = dateObj.getUTCHours();                    // GMT hour
+      var timeDiff = dateObj.getHours() - utchr;            // local - GMT
+      var adjTimeDiff = Math.abs(timeDiff);                 // converted to positive
+
+      // Prefer robust detection via Intl (works across DST)
+      try {
+        var tzPart = Intl.DateTimeFormat("en-US", { timeZoneName: "short" })
+                      .formatToParts(dateObj)
+                      .find(function(p){ return p.type === "timeZoneName"; });
+        var abbr = tzPart ? tzPart.value : "";
+        var map = { PST: "PT", PDT: "PT", MST: "MT", MDT: "MT", CST: "CT", CDT: "CT", EST: "ET", EDT: "ET" };
+        if (map[abbr]) return map[abbr];
+      } catch (e) { /* fallback below */ }
+
+      // Fallback using offset (minutes behind UTC; e.g. 480 for PST, 240 for EDT)
+      var offsetMins = new Date().getTimezoneOffset();
+      var hoursBehindUTC = Math.round(offsetMins / 60);
+
+      if (hoursBehindUTC === 8 || hoursBehindUTC === 7) return "PT"; // PST/PDT
+      if (hoursBehindUTC === 7 || hoursBehindUTC === 6) return "MT"; // MST/MDT
+      if (hoursBehindUTC === 6 || hoursBehindUTC === 5) return "CT"; // CST/CDT
+      if (hoursBehindUTC === 5 || hoursBehindUTC === 4) return "ET"; // EST/EDT
+
+      // Last-resort format: GMT±H:MM
+      var sign = offsetMins <= 0 ? "+" : "-";
+      var abs = Math.abs(offsetMins);
+      var h = Math.floor(abs / 60), m = abs % 60;
+      return "GMT" + sign + h + ":" + pad(m);
+    }
+
+    // Create a time/date function (p.6)
+    function currentTime() {
+      // Declare variables (p.7)
+      var d   = new Date();
+      var hr  = d.getHours();      // current hour (0-23)
+      var min = d.getMinutes();    // current minutes
+      var sec = d.getSeconds();    // current seconds
+      var ampm;
+
+      // Add 0 to single digits for seconds & minutes (p.8)
+      sec = pad(sec);
+      min = pad(min);
+
+      // Determine AM/PM and convert to 12-hour format (p.9–10)
+      if (hr === 12) {
+        ampm = "PM";
+      } else if (hr > 12) {
+        hr   = hr - 12;
+        ampm = "PM";
+      } else if (hr === 0) {
+        hr   = 12;    // 12 AM edge case
+        ampm = "AM";
+      } else {
+        ampm = "AM";
+      }
+
+      // Assemble time format (p.11)
+      var timeZone = getUSZoneAbbrev(d); // challenge (p.18–19)
+      var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timeZone;
+
+      // Display on the page (p.12)
+      var el = document.getElementById("clock");
+      if (el) el.innerText = time;
+    }
+
+    // Initial run of time function + repeat every 1s (p.13–15)
+    currentTime();
+    setInterval(currentTime, 1000);
+  </script>
 </body>
 </html>
