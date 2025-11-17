@@ -38,12 +38,12 @@
     <section aria-labelledby="partners-title">
       <h2 id="partners-title" class="section-title">Our Partners</h2>
       <ul id="partners">
-        <li class="partner"><img src="images/partner1.png" alt="Partner 1 logo"></li>
+        <!-- <li class="partner"><img src="images/partner1.png" alt="Partner 1 logo"></li>
         <li class="partner"><img src="images/partner2.png" alt="Partner 2 logo"></li>
         <li class="partner"><img src="images/partner3.png" alt="Partner 3 logo"></li>
         <li class="partner"><img src="images/partner4.png" alt="Partner 4 logo"></li>
         <li class="partner"><img src="images/partner5.png" alt="Partner 5 logo"></li>
-        <li class="partner"><img src="images/partner6.png" alt="Partner 6 logo"></li>
+        <li class="partner"><img src="images/partner6.png" alt="Partner 6 logo"></li> -->
       </ul>
     </section>
        <!-- Time-of-day display (added per homework p.5) -->
@@ -62,6 +62,14 @@
     </footer>
   </div>
 
+  <script>
+    for (let i = 1; i <= 6; i++) {
+    partners.innerHTML += `<li class="partner">
+      <img src="images/partner${i}.png" alt="Partner ${i} logo">
+    </li>`;
+  }
+
+  </script>
   
   <script>
     // Pad helper: converts 4 -> "04"
