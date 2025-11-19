@@ -205,3 +205,14 @@ footer { margin-top: 20px; background: #e7ebf5; }
   color: #125688;
   font-weight: 600;
 }
+
+/* Contact Form Submit Button Styles */
+form .button input {
+  width: 8em;
+  height: 2.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  /* background-color: #4977D1; */
+  color: #ffffff;
+  border: none;
+}
