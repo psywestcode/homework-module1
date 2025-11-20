@@ -216,3 +216,32 @@ form .button input {
   color: #ffffff;
   border: none;
 }
+
+/* 1. Set the container width to 300px to match other form inputs */
+.randomcode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes input to Left, Code to Right */
+  width: 300px;                   /* Crucial: Matches the width of your Name/Email fields */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* 2. Make the input smaller so there is room for the grey box */
+.randomcode input[type="text"] {
+  width: 140px; /* Overrides the global 300px width */
+}
+
+/* 3. Style the Grey Box to fill the remaining space */
+#codes {
+  width: 150px;              /* Fixed width to ensure it hits the right edge */
+  background-color: #cccccc; /* Grey background */
+  color: #333333;
+  text-align: center;        /* Centers the code text inside the box */
+  padding: 8px 0;            /* Vertical padding */
+  margin: 0;                 /* Removes default paragraph margins */
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #999;
+  letter-spacing: 2px;
+}
