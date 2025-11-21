@@ -30,7 +30,7 @@ function disableButton(btnvalue) {
         document.getElementById("submit").style.color = "rgba(255, 255, 255, 0.5)";
     } else {
         //set button and label color with no transparency
-        document.getElementById("submit").style.backgroundColor = "rgba(73, 119, 209, 1)";
+        document.getElementById("submit").style.backgroundColor = "rgba(234, 41, 11, 1)";
         document.getElementById("submit").style.color = "rgba(255, 255, 255, 1)";
     }
 }
