@@ -253,3 +253,17 @@ form .button input {
     display: none;
     margin-top: 10px;
 }
+
+/* Inside homework-session1/style.css */
+
+/* Style for cells that are selectable (shows the hand cursor) */
+.td-clickable {
+    cursor: pointer;
+}
+
+/* Style for the selected state (highlight) */
+/* The PDF does not specify a color, so a standard light green is used here */
+.td-selected {
+    background-color: #90ee90; /* Light Green */
+    font-weight: bold;         /* Optional: makes text pop */
+}
