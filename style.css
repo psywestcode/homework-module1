@@ -116,8 +116,22 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+
 table, caption, th, td { border: 1px solid #000; }
-th, td { width: 150px; height: 35px; text-align: center; padding: 8px; }
+
+/* Keep shared structural styles for th and td */
+th, td { 
+  width: 150px; 
+  height: 35px; 
+  text-align: center; 
+  padding: 8px; 
+}
+
+/* ADDED: Background color for Table Headers (First Row & First Column) */
+th {
+  background-color: lightblue; /* You can also use a hex code like #add8e6 */
+}
+
 caption {
   text-transform: uppercase;
   font-weight: 600;
