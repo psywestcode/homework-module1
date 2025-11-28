@@ -338,3 +338,56 @@ form .button input {
     display: block;
     border-radius: 4px;
 }
+
+
+/* The main container for the selected activities */
+#displaySelected {
+    visibility: hidden; /* Hidden by default */
+    margin: 0 auto;
+    width: 600px;
+    border: 2px solid #9ed034; /* Green border */
+    padding: 0.75em;
+    background: #fff; /* Ensuring it has a background against page color */
+}
+
+/* Flex-like behavior for children (using inline-block per homework) */
+#displaySelected #result, 
+#displaySelected #sendinfo {
+    display: inline-block;
+    vertical-align: top; /* Ensures they align at the top */
+    margin: 0;
+}
+
+/* The results area */
+#result {
+    min-height: 50px;
+    width: 300px;
+    padding: 0;
+}
+
+/* Heading inside results */
+#result h4 {
+    margin-bottom: 1em;
+    font-size: 1.15em;
+    color: #2d3648; /* Matching site theme */
+}
+
+/* Input field styling */
+#displaySelected #sendinfo input[type="email"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Highlight class for selected cells (Page 6 calls this 'tdhighlight') */
+.tdhighlight {
+    background-color: #9ed034; /* Matches the border color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Ensure unselected clickable cells show a pointer */
+tbody td {
+    cursor: pointer;
+}
