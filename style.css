@@ -1,6 +1,4 @@
-/* Great Cliffs — consolidated stylesheet (with cliffs page styles) */
-/* Table & form refinements per course PDF; consistent layout sitewide. */
-
+/* Global styles */
 * { box-sizing: border-box; }
 
 html, body {
@@ -21,7 +19,7 @@ html, body {
 
 /* Header (hero background) */
 header {
-  background: url(images/hero.jpg) center center no-repeat;
+  background: url(images/cliff_ocean.jpg) center center no-repeat;
   background-size: cover;
   height: 280px;
   margin: 0;
