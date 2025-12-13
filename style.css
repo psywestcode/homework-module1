@@ -17,7 +17,7 @@ html, body {
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-/* Header (hero background) */
+/* Header (hero background)
 header {
   background: url(images/cliff_ocean.jpg) center center no-repeat;
   background-size: cover;
@@ -25,6 +25,12 @@ header {
   margin: 0;
   position: relative;
   overflow: hidden;
+} */
+
+header {
+    width: 100%;
+    min-height: 275px; /* Instruction from Page 9 */
+    /* background: url(...) REMOVED per instructions */
 }
 
 /* Top bar: logo + nav */
@@ -402,6 +408,15 @@ tbody td {
     color: rgb(255, 255, 255);
 }
 
+/* Instruction from Page 8: "navbar background color" */
+.bg-custom {
+    background-color: rgba(38, 41, 61, 0.7);
+}
+
+/* Instruction from Page 8: "navbar text link color" */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}
 /* --- Header & Background Changes --- */
 
 /* Header keeps dimensions but loses the background image */
