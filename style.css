@@ -146,12 +146,14 @@ caption {
 
 /* Form styling (Contact) */
 label { display: block; margin: 15px 0 0 0; }
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
 input[type="tel"],
 select { width: 300px; }
 input[type="radio"] { width: 25px; }
-textarea { width: 300px; min-height: 100px; }
+textarea { width: 300px; min-height: 100px; } */
+
+
 input[type="submit"] {
   display: block;
   margin: 20px 10px 0 0;
@@ -433,11 +435,10 @@ header {
 */
 
 #home, #cliffs, #activities, #contact {
-    /* Background moved here */
-    background: no-repeat white url("images/cliff_ocean.jpg"); 
-    background-size: 100% 400px; /* Specific size per instructions */
-    /* Note: You might want to remove the 'white' if it overrides the image transparency, 
-       but the instruction explicitly said: "white url(...)" */
+    background: no-repeat white url("images/cliff_ocean.jpg");
+    background-size: cover; /* CHANGED from 100% 400px to cover for responsiveness */
+    background-position: center; /* Ensures image stays centered */
+    background-attachment: fixed; /* Optional: adds a nice parallax effect */
 }
 
 /* If other pages need different images, target them specifically: */
