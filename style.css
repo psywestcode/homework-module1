@@ -389,3 +389,41 @@ form .button input {
 tbody td {
     cursor: pointer;
 }
+
+
+/* --- Navbar Styling --- */
+/* Specified background color */
+.navbar {
+    background-color: rgba(38, 41, 61, 0.7);
+}
+
+/* Specified link color */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}
+
+/* --- Header & Background Changes --- */
+
+/* Header keeps dimensions but loses the background image */
+header {
+    width: 100%;
+    min-height: 275px; /* Adjusted height per instructions */
+    /* background: removed; */
+}
+
+/* Move background image to Page IDs */
+/* You need to ensure your <body> tags have these IDs: 
+   <body id="home"> for index.html
+   <body id="cliffs"> for cliffs.html, etc. 
+*/
+
+#home, #cliffs, #activities, #contact {
+    /* Background moved here */
+    background: no-repeat white url("images/cliff_ocean.jpg"); 
+    background-size: 100% 400px; /* Specific size per instructions */
+    /* Note: You might want to remove the 'white' if it overrides the image transparency, 
+       but the instruction explicitly said: "white url(...)" */
+}
+
+/* If other pages need different images, target them specifically: */
+/* #cliffs { background-image: url("images/forest_cliff.jpg"); } */
