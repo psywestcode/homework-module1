@@ -57,58 +57,72 @@
       <p>info@greatcliffs.com</p>
 
       <form action="/contact" method="post">
-        <h3>Fill Out This Form:</h3>
-        <fieldset>
-          <legend>User personal information</legend>
-
-          <label for="full-name">Enter your full name</label>
-          <input id="full-name" name="full_name" type="text" placeholder="Enter your full name" required />
-
+          <h3>Fill Out This Form:</h3>
           <fieldset>
-            <legend>Select your gender</legend>
-            <label for="gender-male"><input id="gender-male" type="radio" name="gender" value="male" /> Male</label>
-            <label for="gender-female"><input id="gender-female" type="radio" name="gender" value="female" /> Female</label>
+              <legend>User personal information</legend>
+
+              <div class="form-group">
+                  <label for="full-name">Enter your full name</label>
+                  <input id="full-name" name="full_name" type="text" class="form-control" placeholder="Enter your full name" required />
+              </div>
+
+              <fieldset class="form-group">
+                  <legend>Select your gender</legend>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" id="gender-male" type="radio" name="gender" value="male" />
+                      <label class="form-check-label" for="gender-male">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" id="gender-female" type="radio" name="gender" value="female" />
+                      <label class="form-check-label" for="gender-female">Female</label>
+                  </div>
+              </fieldset>
+
+              <div class="form-group">
+                  <label for="contact-method">How should we contact you?</label>
+                  <select id="contact-method" name="contact-method" class="form-control">
+                      <option id="opt-instruction" value="none">Select One</option>
+                      <option id="opt-email" value="email">Email</option>
+                      <option id="opt-phone" value="phone">Phone</option>
+                  </select>
+              </div>
+
+              <div id="emailbox" class="contact-box form-group">
+                  <label for="email">Enter your email</label>
+                  <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" />
+              </div>
+
+              <div id="phonebox" class="contact-box form-group">
+                  <label for="phone">Enter your phone</label>
+                  <input id="phone" name="phone" type="tel" class="form-control" placeholder="Enter your phone" />
+              </div>
+
+              <div class="form-group">
+                  <label for="cliff">Which Cliff are you inquiring?</label>
+                  <select id="cliff" name="cliff" class="form-control">
+                      <option value="west">West Cliff</option>
+                      <option value="north">North Cliff</option>
+                      <option value="east">East Cliff</option>
+                      <option value="south">South Cliff</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="comments">Tell us the reason of your visit today:</label>
+                  <textarea id="comments" name="comments" class="form-control" rows="5"></textarea>
+              </div>
+
+              <div class="randomcode">
+                  <input id="codeentered" type="text" name="randomcode" placeholder="Enter the code shown" />
+                  <p id="codes"></p>
+              </div>
+              
+              <div class="button">
+                  <button type="submit" id="Submit" class="btn btn-primary">
+                    Send Enquiry <i class="fa fa-paper-plane"></i>
+                </button>
+              </div>
           </fieldset>
-
-          <label for="contact-method">How should we contact you?</label>
-          <select id="contact-method" name="contact-method">
-            <option id="opt-instruction" value="none">Select One</option>
-            <option id="opt-email" value="email">Email</option>
-            <option id="opt-phone" value="phone">Phone</option>
-          </select>
-
-          <div id="emailbox" class="contact-box">
-             <label for="email">Enter your email</label>
-             <input id="email" name="email" type="email" placeholder="Enter your email" />
-          </div>
-
-          <div id="phonebox" class="contact-box">
-             <label for="phone">Enter your phone</label>
-             <input id="phone" name="phone" type="tel" placeholder="Enter your phone" />
-          </div>
-
-          <label for="cliff">Which Cliff are you inquiring?</label>
-          <select id="cliff" name="cliff">
-            <option value="west">West Cliff</option>
-            <option value="north">North Cliff</option>
-            <option value="east">East Cliff</option>
-            <option value="south">South Cliff</option>
-          </select>
-
-          <label for="comments">Tell us the reason of your visit today:</label>
-          <textarea id="comments" name="comments" rows="5" cols="30"></textarea>
-
-          <div class="randomcode">
-            <input id="codeentered" type="text" name="randomcode" placeholder="Enter the code shown" />
-            <p id="codes"></p>
-          </div>
-          
-          <div class="button">
-            <button type="submit" id="Submit" class="btn btn-primary">
-              Send Enquiry <i class="fa fa-paper-plane"></i>
-          </button>
-          </div>
-        </fieldset>
       </form>
     </main>
     
