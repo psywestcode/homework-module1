@@ -51,8 +51,9 @@
         with the state department. Therefore, for schedule inquiries or information, please
         contact them directly. For a list of activities, please refer to the table below:
       </p>
-
-      <table>
+      
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
         <caption>Activities at the Cliffs</caption>
         <thead>
           <tr>
@@ -101,6 +102,8 @@
           </tr>
         </tbody>
       </table>
+      </div>
+      
 
       <div id="displaySelected">
         <div id="result">
@@ -143,7 +146,27 @@
             <img src="images/partners/partner-6.png" alt="Partner 6" class="img-fluid">
         </div>
     </div>
-</section>
+    </section>
+
+    <div class="modal fade" id="activityModal" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="activityModalLabel">My selected activities to enquire:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Back to Activities</button>
+            <button type="button" class="btn btn-primary">Get Info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div id="nondisclaimer">
         <div class="copy">&copy; <span id="year">2025</span> Great Cliffs</div>
@@ -152,7 +175,6 @@
         <p>This site is a structural demo page for coursework.</p>
       </div>
     </footer>
-  </div>
 
 <script src="js/site_scripts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
